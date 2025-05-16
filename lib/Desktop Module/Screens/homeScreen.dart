@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/image_taskbar.dart';
 import 'package:opeterative_system/Login%20Module/Components/style_desktop.dart';
+import 'package:opeterative_system/Desktop%20Module/functions/functions.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: MyBackground(
         useImage: false,
         child: Stack(
@@ -39,21 +40,22 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         ImageTaskbar(
                           imagePath: 'lib/Components/Images/Google_Logo.webp',
-                          onTap: null,
+                          onTap: LauncherUtil.abrirGoogle,
                         ),
 
                         //Spotify Icon
                         SizedBox(height: 10),
                         ImageTaskbar(
                           imagePath: 'lib/Components/Images/Spotify_Icon.webp',
-                          onTap: null,
+                          onTap: LauncherUtil.abrirSpotify,
                         ),
 
                         //Files Icon
                         SizedBox(height: 10),
                         ImageTaskbar(
                           imagePath: 'lib/Components/Images/File_Icon.webp',
-                          onTap: null,
+                          onTap: () => LauncherUtil.abrirArchivo(
+                              'C:/'), 
                         ),
 
                         //Settings Icon
@@ -67,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         ImageTaskbar(
                           imagePath: 'lib/Components/Images/Emotion_Icon.webp',
-                          onTap: null,
+                          onTap: LauncherUtil.chistes,
                         ),
                       ],
                     ),
