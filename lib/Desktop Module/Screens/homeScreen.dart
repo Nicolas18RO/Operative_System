@@ -8,25 +8,67 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        body: MyBackground(
-            useImage: false,
-            child: Align(
+      body: MyBackground(
+        useImage: false,
+        child: Stack(
+          children: [
+            //Centered Text
+            Center(
+              child: Text(
+                'Bienvenido! Es un placer tenerte de vuelta',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            //Right-side Taskbar
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: EdgeInsets.all(10),
                 child: ContainerBlur(
-                    widthContainerBlur: 60,
-                    heigthContainerBlur: 300,
-                    child: Column(
-                      children: [
-                        //Acceso directo Google
-                        SizedBox(height: 10),
-                        ImageTaskbar(
-                            imagePath: 'lib/Components/Images/Google_Logo.webp',
-                            onTap: null)
-                      ],
-                    )),
+                  widthContainerBlur: 60,
+                  heigthContainerBlur: 300,
+                  child: Column(
+                    children: [
+                      //Google Icon
+                      SizedBox(height: 10),
+                      ImageTaskbar(
+                        imagePath: 'lib/Components/Images/Google_Logo.webp',
+                        onTap: null,
+                      ),
+
+                      //Spotify Icon
+                      SizedBox(height: 10),
+                      ImageTaskbar(
+                        imagePath: 'lib/Components/Images/Spotify_Icon.webp',
+                        onTap: null,
+                      ),
+
+                      //Files Icon
+                      SizedBox(height: 10),
+                      ImageTaskbar(
+                        imagePath: 'lib/Components/Images/File_Icon.webp',
+                        onTap: null,
+                      ),
+
+                      //Settings Icon
+                      SizedBox(height: 10),
+                      ImageTaskbar(
+                        imagePath: 'lib/Components/Images/Settings_Icon.webp',
+                        onTap: null,
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            )));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -8,7 +8,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 242, 241, 236),
+      backgroundColor: const Color.fromARGB(255, 169, 255, 255),
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
