@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/image_taskbar.dart';
-import 'package:opeterative_system/Desktop%20Module/Components/style.dart';
+import 'package:opeterative_system/Login%20Module/Components/style_desktop.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,36 +32,45 @@ class HomeScreen extends StatelessWidget {
                 child: ContainerBlur(
                   widthContainerBlur: 60,
                   heigthContainerBlur: 300,
-                  child: Column(
-                    children: [
-                      //Google Icon
-                      SizedBox(height: 10),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/Google_Logo.webp',
-                        onTap: null,
-                      ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        //Google Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Google_Logo.webp',
+                          onTap: null,
+                        ),
 
-                      //Spotify Icon
-                      SizedBox(height: 10),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/Spotify_Icon.webp',
-                        onTap: null,
-                      ),
+                        //Spotify Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Spotify_Icon.webp',
+                          onTap: null,
+                        ),
 
-                      //Files Icon
-                      SizedBox(height: 10),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/File_Icon.webp',
-                        onTap: null,
-                      ),
+                        //Files Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/File_Icon.webp',
+                          onTap: null,
+                        ),
 
-                      //Settings Icon
-                      SizedBox(height: 10),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/Settings_Icon.webp',
-                        onTap: null,
-                      ),
-                    ],
+                        //Settings Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Settings_Icon.webp',
+                          onTap: null,
+                        ),
+
+                        //Emotion Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Emotion_Icon.webp',
+                          onTap: null,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

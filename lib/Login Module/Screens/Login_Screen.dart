@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:opeterative_system/Desktop%20Module/Components/my_text.dart';
+import 'package:opeterative_system/Desktop%20Module/Components/style_Login.dart';
 import 'package:opeterative_system/Desktop%20Module/Screens/homeScreen.dart';
 import 'package:opeterative_system/Login%20Module/Components/myButton.dart';
 
@@ -8,31 +10,38 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 169, 255, 255),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.account_box,
-                color: Colors.blue,
-                size: 70,
-              ),
+      body: MyBackgroundLogin(
+        useImage: false,
+        child: Stack(children: [
+          Center(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //Account circle icon
+                  const Icon(
+                    Icons.account_circle,
+                    color: Color(0xFFF3F4FA),
+                    size: 150,
+                  ),
 
-              //Button Iniciar
-              const SizedBox(
-                height: 20,
-              ),
-              MyButton(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()));
-                  },
-                  text: 'Iniciar')
-            ]),
+                  //User Text
+                  const SizedBox(height: 10),
+                  const MyTextLogin(texto: 'User 1', fontSizeText: 20),
+
+                  //Button Iniciar
+                  const SizedBox(height: 40),
+                  MyButton(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()));
+                      },
+                      text: 'Iniciar')
+                ]),
+          ),
+        ]),
       ),
     );
   }
