@@ -1,62 +1,82 @@
 import 'package:flutter/material.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/image_taskbar.dart';
-import 'package:opeterative_system/Desktop%20Module/Components/style.dart';
-import 'package:opeterative_system/Desktop%20Module/functions/functions.dart';
+import 'package:opeterative_system/Login%20Module/Components/style_desktop.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          // Imagen de fondo
-          Positioned.fill(
-            child: Image.asset(
-              'lib/Components/Images/image.png',
-              fit: BoxFit.cover,
+    return const Scaffold(
+      body: MyBackground(
+        useImage: false,
+        child: Stack(
+          children: [
+            //Centered Text
+            Center(
+              child: Text(
+                'Bienvenido! Es un placer tenerte de vuelta',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
-          MyBackground(
-            useImage:false,
-            child: Align(
+
+            //Right-side Taskbar
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 child: ContainerBlur(
                   widthContainerBlur: 60,
                   heigthContainerBlur: 300,
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/Google_Logo.webp',
-                        onTap: () => LauncherUtil.abrirGoogle(),
-                      ),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/music.webp',
-                        onTap: () => LauncherUtil.abrirSpotify(),
-                      ),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/document.webp',
-                        onTap: () => LauncherUtil.abrirArchivo("C:/"),
-                      ),
-                      ImageTaskbar(
-                          imagePath: 'lib/Components/Images/happy.webp',
-                          onTap: () => LauncherUtil.chistes(),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        //Google Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Google_Logo.webp',
+                          onTap: null,
                         ),
-                      ImageTaskbar(
-                        imagePath: 'lib/Components/Images/book.webp',
-                        onTap: () => LauncherUtil.consejos(),
-                      ),
-                    ],
+
+                        //Spotify Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Spotify_Icon.webp',
+                          onTap: null,
+                        ),
+
+                        //Files Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/File_Icon.webp',
+                          onTap: null,
+                        ),
+
+                        //Settings Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Settings_Icon.webp',
+                          onTap: null,
+                        ),
+
+                        //Emotion Icon
+                        SizedBox(height: 10),
+                        ImageTaskbar(
+                          imagePath: 'lib/Components/Images/Emotion_Icon.webp',
+                          onTap: null,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

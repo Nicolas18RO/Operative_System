@@ -49,10 +49,10 @@ class ContainerBlur extends StatelessWidget {
   }
 }
 
-class MyBackground extends StatelessWidget {
+class MyBackgroundLogin extends StatelessWidget {
   final Widget child;
   final bool useImage;
-  const MyBackground({
+  const MyBackgroundLogin({
     super.key,
     required this.child,
     required this.useImage,
@@ -69,9 +69,9 @@ class MyBackground extends StatelessWidget {
             : const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color(0xff740f80),
-                    Color(0xFFBD11DF),
-                    Color(0xFFEB6AFF)
+                    Color(0xFFAAA7D2),
+                    Color(0xFFC1C1E0),
+                    Color(0xFFD9DAEC)
                   ],
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
