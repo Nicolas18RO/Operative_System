@@ -87,3 +87,17 @@ class ContainerBackground extends StatelessWidget {
         ));
   }
 }
+
+//Style to appBar
+SizedBox MyBackgroundAppBar() {
+  return const SizedBox.expand(
+    child: DecoratedBox(
+        decoration: BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Color(0xff740f80), Color(0xFFBD11DF), Color(0xFFEB6AFF)],
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+      ),
+    )),
+  );
+}

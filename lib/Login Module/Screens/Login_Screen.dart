@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:opeterative_system/Desktop%20Module/Components/my_text.dart';
-import 'package:opeterative_system/Desktop%20Module/Components/style_Login.dart';
+import 'package:opeterative_system/Components/Widgets/my_text.dart';
 import 'package:opeterative_system/Desktop%20Module/Screens/homeScreen.dart';
 import 'package:opeterative_system/Login%20Module/Components/myButton.dart';
+import 'package:opeterative_system/Login%20Module/Components/style_login.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -27,7 +27,10 @@ class LoginScreen extends StatelessWidget {
 
                   //User Text
                   const SizedBox(height: 10),
-                  const MyTextLogin(texto: 'User 1', fontSizeText: 20),
+                  const MyTextDesktop(
+                      texto: 'User 1',
+                      fontSizeText: 20,
+                      color: Color(0xFF2E2A3C)),
 
                   //Button Iniciar
                   const SizedBox(height: 40),

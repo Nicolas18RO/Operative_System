@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/image_taskbar.dart';
-import 'package:opeterative_system/Login%20Module/Components/style_desktop.dart';
+import 'package:opeterative_system/Desktop%20Module/Screens/web_app_screen.dart';
+import 'package:opeterative_system/Desktop%20Module/Components/style_desktop.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: MyBackground(
         useImage: false,
         child: Stack(
           children: [
             //Centered Text
-            Center(
+            const Center(
               child: Text(
                 'Bienvenido! Es un placer tenerte de vuelta',
                 style: TextStyle(
@@ -28,7 +29,7 @@ class HomeScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: ContainerBlur(
                   widthContainerBlur: 60,
                   heigthContainerBlur: 300,
@@ -36,38 +37,64 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         //Google Icon
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         ImageTaskbar(
                           imagePath: 'lib/Components/Images/Google_Logo.webp',
-                          onTap: null,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const WebAppWindow(
+                                  url: 'https://www.google.com',
+                                  appbarName: 'Google',
+                                ),
+                              ),
+                            );
+                          },
+                          toolTip: 'Google',
                         ),
 
                         //Spotify Icon
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         ImageTaskbar(
                           imagePath: 'lib/Components/Images/Spotify_Icon.webp',
-                          onTap: null,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const WebAppWindow(
+                                  url:
+                                      'https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC',
+                                  appbarName: 'Spotify',
+                                ),
+                              ),
+                            );
+                          },
+                          toolTip: 'Spotify',
                         ),
 
                         //Files Icon
-                        SizedBox(height: 10),
-                        ImageTaskbar(
+                        const SizedBox(height: 10),
+                        const ImageTaskbar(
                           imagePath: 'lib/Components/Images/File_Icon.webp',
                           onTap: null,
+                          toolTip: 'Files',
                         ),
 
                         //Settings Icon
-                        SizedBox(height: 10),
-                        ImageTaskbar(
+                        const SizedBox(height: 10),
+                        const ImageTaskbar(
                           imagePath: 'lib/Components/Images/Settings_Icon.webp',
                           onTap: null,
+                          toolTip: 'Settings',
                         ),
 
                         //Emotion Icon
-                        SizedBox(height: 10),
-                        ImageTaskbar(
+                        const SizedBox(height: 10),
+                        const ImageTaskbar(
                           imagePath: 'lib/Components/Images/Emotion_Icon.webp',
                           onTap: null,
+                          toolTip: 'Emotion',
                         ),
                       ],
                     ),
