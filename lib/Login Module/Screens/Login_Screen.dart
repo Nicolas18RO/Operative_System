@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget {
                   const Icon(
                     Icons.account_circle,
                     color: Color(0xFFF3F4FA),
-                    size: 150,
+                    size: 151,
                   ),
 
                   //User Text

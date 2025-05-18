@@ -1,0 +1,14 @@
+[33m8e20b8c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mNicolas_Rodriguez[m[33m)[m HEAD@{0}: commit: New: Se agrego la dependencia de webview_windows y se creo el archivo que maneja esta funcion, permitiendo abrir cualquier url sin salir del sistema operativo
+[33m35674cf[m[33m ([m[1;32mRolando_Castellanos[m[33m)[m HEAD@{1}: checkout: moving from Rolando_Castellanos to Nicolas_Rodriguez
+[33m35674cf[m[33m ([m[1;32mRolando_Castellanos[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m35674cf[m[33m ([m[1;32mRolando_Castellanos[m[33m)[m HEAD@{3}: checkout: moving from Nicolas_Rodriguez to Rolando_Castellanos
+[33m35674cf[m[33m ([m[1;32mRolando_Castellanos[m[33m)[m HEAD@{4}: checkout: moving from Development to Nicolas_Rodriguez
+[33m57f566e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Development[m[33m, [m[1;32mmain[m[33m, [m[1;32mDevelopment[m[33m)[m HEAD@{5}: checkout: moving from Nicolas_Rodriguez to Development
+[33m35674cf[m[33m ([m[1;32mRolando_Castellanos[m[33m)[m HEAD@{6}: commit: feature: Se cambio el estilo del LoginScreen
+[33m82016e2[m HEAD@{7}: commit: add: Se agregaron los nuevos accesos directos en el Taskbar
+[33m57f566e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Development[m[33m, [m[1;32mmain[m[33m, [m[1;32mDevelopment[m[33m)[m HEAD@{8}: checkout: moving from main to Nicolas_Rodriguez
+[33m57f566e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Development[m[33m, [m[1;32mmain[m[33m, [m[1;32mDevelopment[m[33m)[m HEAD@{9}: checkout: moving from Development to main
+[33m57f566e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Development[m[33m, [m[1;32mmain[m[33m, [m[1;32mDevelopment[m[33m)[m HEAD@{10}: checkout: moving from main to Development
+[33m57f566e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Development[m[33m, [m[1;32mmain[m[33m, [m[1;32mDevelopment[m[33m)[m HEAD@{11}: commit: Sistema Operativo Emotion
+[33m5974a87[m HEAD@{12}: Branch: renamed refs/heads/master to refs/heads/main
+[33m5974a87[m HEAD@{14}: commit (initial): Sistema Operativo Emotion
