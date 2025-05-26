@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:opeterative_system/Components/Widgets/my_text.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/style_desktop.dart';
+import 'package:opeterative_system/Desktop%20Module/Components/time_current.dart';
 import 'package:webview_windows/webview_windows.dart';
 
 class WebAppWindow extends StatefulWidget {
@@ -38,6 +39,14 @@ class _WebAppWindowState extends State<WebAppWindow> {
             color: const Color(0xFFF5F5F9)),
         elevation: 0,
         flexibleSpace: MyBackgroundAppBar(),
+
+        //Current Time
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 16),
+            child: TimeWidget(fontSize: 16),
+          ),
+        ],
       ),
       body: Webview(_controller),
     );

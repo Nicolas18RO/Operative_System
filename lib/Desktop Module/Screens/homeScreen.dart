@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:opeterative_system/Components/Widgets/my_text.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/image_taskbar.dart';
+import 'package:opeterative_system/Desktop%20Module/Components/time_current.dart';
 import 'package:opeterative_system/Desktop%20Module/Screens/web_app_screen.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/style_desktop.dart';
 
@@ -15,13 +17,17 @@ class HomeScreen extends StatelessWidget {
           children: [
             //Centered Text
             const Center(
-              child: Text(
-                'Bienvenido! Es un placer tenerte de vuelta',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MyTextDesktop(
+                    texto: 'Bienvenido a EMOSOFT!',
+                    fontSizeText: 30,
+                    color: Color(0xFFFEF5FE),
+                  ),
+                  SizedBox(height: 10),
+                  TimeWidget(fontSize: 40)
+                ],
               ),
             ),
 
@@ -91,9 +97,19 @@ class HomeScreen extends StatelessWidget {
 
                         //Emotion Icon
                         const SizedBox(height: 10),
-                        const ImageTaskbar(
+                        ImageTaskbar(
                           imagePath: 'lib/Components/Images/Emotion_Icon.webp',
-                          onTap: null,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const WebAppWindow(
+                                  url: 'https://es.memedroid.com/memes/top/day',
+                                  appbarName: 'Emotion',
+                                ),
+                              ),
+                            );
+                          },
                           toolTip: 'Emotion',
                         ),
                       ],

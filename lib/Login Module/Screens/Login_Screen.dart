@@ -19,11 +19,8 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   //Account circle icon
-                  const Icon(
-                    Icons.account_circle,
-                    color: Color(0xFFF3F4FA),
-                    size: 151,
-                  ),
+                  const Icon(Icons.account_circle,
+                      color: Color(0xFFF3F4FA), size: 150),
 
                   //User Text
                   const SizedBox(height: 10),
