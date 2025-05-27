@@ -1,12 +1,22 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:opeterative_system/Components/Widgets/my_text.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/image_taskbar.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/time_current.dart';
 import 'package:opeterative_system/Desktop%20Module/Screens/web_app_screen.dart';
 import 'package:opeterative_system/Desktop%20Module/Components/style_desktop.dart';
+import 'package:opeterative_system/Login%20Module/Screens/Login_Screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool showBlurContainer = false;
 
   @override
   Widget build(BuildContext context) {
@@ -81,17 +91,32 @@ class HomeScreen extends StatelessWidget {
 
                         //Files Icon
                         const SizedBox(height: 10),
-                        const ImageTaskbar(
+                        ImageTaskbar(
                           imagePath: 'lib/Components/Images/File_Icon.webp',
-                          onTap: null,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => const WebAppWindow(
+                                  url:
+                                      'https://mailunicundiedu-my.sharepoint.com/my?id=%2Fpersonal%2Fnrodriguezo%5Fucundinamarca%5Fedu%5Fco%2FDocuments%2FUNIVERSIDAD%2FQUINTO%20SEMESTRE%2FSistemas%20Operativos%2FOperative%20System',
+                                  appbarName: 'Files',
+                                ),
+                              ),
+                            );
+                          },
                           toolTip: 'Files',
                         ),
 
                         //Settings Icon
                         const SizedBox(height: 10),
-                        const ImageTaskbar(
+                        ImageTaskbar(
                           imagePath: 'lib/Components/Images/Settings_Icon.webp',
-                          onTap: null,
+                          onTap: () {
+                            setState(() {
+                              showBlurContainer = !showBlurContainer;
+                            });
+                          },
                           toolTip: 'Settings',
                         ),
 
@@ -118,6 +143,43 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+            if (showBlurContainer)
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(100),
+                  child: ContainerBlur(
+                      widthContainerBlur: 100,
+                      heigthContainerBlur: 150,
+                      child: Column(
+                        children: [
+                          //Suspend Icon
+                          const SizedBox(height: 10),
+                          ImageTaskbar(
+                              imagePath:
+                                  'lib/Components/Images/Suspended_Icon.webp',
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const LoginScreen()));
+                              },
+                              toolTip: 'Suspender'),
+
+                          //Shut Down Icon
+                          const SizedBox(height: 10),
+                          ImageTaskbar(
+                              imagePath:
+                                  'lib/Components/Images/TurnOff_Icon.webp',
+                              onTap: () {
+                                exit(0);
+                              },
+                              toolTip: 'Apagar'),
+                        ],
+                      )),
+                ),
+              )
           ],
         ),
       ),
